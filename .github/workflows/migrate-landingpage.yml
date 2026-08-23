@@ -1,0 +1,127 @@
+name: One-time KOJAYA landing page migration
+
+on:
+  push:
+    branches:
+      - chore/migrate-k-landingpage
+    paths:
+      - .github/workflows/migrate-landingpage.yml
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out target branch
+        uses: actions/checkout@v4
+        with:
+          ref: chore/migrate-k-landingpage
+          fetch-depth: 0
+
+      - name: Use Node.js 22.12
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.12.0
+          cache: npm
+
+      - name: Import the existing KOJAYA landing page
+        shell: bash
+        run: |
+          set -euo pipefail
+          migration_dir="$(mktemp -d)"
+          git clone --depth 1 https://github.com/johnd-creator/k_landingpage.git "$migration_dir/source"
+          rsync -a --delete --exclude='.git/' --exclude='.github/' "$migration_dir/source/" ./
+          rm -f wrangler.jsonc worker-configuration.d.ts
+
+      - name: Configure static deployment on Cloudflare Workers
+        shell: bash
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          import fs from 'node:fs';
+
+          const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+          packageJson.name = 'koperasikojaya';
+          packageJson.description = 'Landing page resmi Koperasi Jasa Karya (KOJAYA).';
+          packageJson.private = true;
+          packageJson.scripts = {
+            ...packageJson.scripts,
+            check: 'astro check && astro build && npx --yes wrangler@4.88.0 deploy --dry-run',
+            deploy: 'npx --yes wrangler@4.88.0 deploy'
+          };
+          fs.writeFileSync('package.json', JSON.stringify(packageJson, null, 2) + '\n');
+
+          const packageLock = JSON.parse(fs.readFileSync('package-lock.json', 'utf8'));
+          packageLock.name = 'koperasikojaya';
+          if (packageLock.packages?.['']) {
+            packageLock.packages[''].name = 'koperasikojaya';
+          }
+          fs.writeFileSync('package-lock.json', JSON.stringify(packageLock, null, 2) + '\n');
+
+          const wrangler = {
+            name: 'koperasikojaya',
+            compatibility_date: '2026-08-23',
+            assets: {
+              directory: './dist'
+            },
+            observability: {
+              enabled: true
+            }
+          };
+          fs.writeFileSync('wrangler.json', JSON.stringify(wrangler, null, 2) + '\n');
+
+          const readme = fs.readFileSync('README.md', 'utf8');
+          const workersSection = `## Cloudflare Workers
+
+          Situs ini dibangun sebagai Astro static site dan dipublikasikan melalui Cloudflare Workers Static Assets.
+
+          \`\`\`sh
+          npm ci
+          npm run build
+          npm run deploy
+          \`\`\`
+
+          Output produksi berada di \`dist/\` dan dipetakan melalui \`wrangler.json\` ke Worker \`koperasikojaya\`.
+
+          `;
+          const updatedReadme = readme.replace(
+            /## Cloudflare Pages[\s\S]*?(?=## 👀)/,
+            workersSection,
+          );
+          fs.writeFileSync('README.md', updatedReadme);
+
+          const agents = fs.readFileSync('AGENTS.md', 'utf8')
+            .replace(
+              'A landing page site built with Astro 7 (minimal starter). Named \`k_landingpage\`.',
+              'The official KOJAYA landing page built with Astro 7 and deployed as static assets on Cloudflare Workers. Repository name: \`koperasikojaya\`.',
+            )
+            .replace(
+              'Standard Astro minimal layout: \`src/pages/*.astro\` files become routes by filename. Static assets live in \`public/\`. There is no \`src/components/\` yet — create it when extracting reusable sections.',
+              'Standard Astro static layout: \`src/pages/*.astro\` files become routes by filename, reusable sections live in \`src/components/\`, shared layouts in \`src/layouts/\`, and static assets in \`public/\`. Production output is generated in \`dist/\` and deployed with Wrangler.',
+            );
+          fs.writeFileSync('AGENTS.md', agents);
+          NODE
+
+      - name: Verify Astro build and Worker package
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm ci
+          npm run astro -- check
+          npm run build
+          npx --yes wrangler@4.88.0 deploy --dry-run
+
+      - name: Commit migration result
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f .github/workflows/migrate-landingpage.yml
+          rmdir .github/workflows 2>/dev/null || true
+          rmdir .github 2>/dev/null || true
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "feat: migrate KOJAYA landing page to Cloudflare Workers"
+          git push origin HEAD:chore/migrate-k-landingpage
