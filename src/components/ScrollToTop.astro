@@ -1,0 +1,116 @@
+---
+---
+<button id="scroll-to-top" class="scroll-to-top-btn" aria-label="Kembali ke Atas">
+  <svg class="progress-ring" width="48" height="48" viewBox="0 0 48 48">
+    <circle class="progress-ring__circle" stroke="rgba(255,255,255,0.2)" stroke-width="3" fill="transparent" r="20" cx="24" cy="24"/>
+    <circle id="scroll-progress-bar" class="progress-ring__bar" stroke="#78C800" stroke-width="3" fill="transparent" r="20" cx="24" cy="24"/>
+  </svg>
+  <div class="arrow-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+  </div>
+</button>
+
+<style>
+  .scroll-to-top-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: rgba(6, 43, 85, 0.94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.9);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 8px 24px rgba(6, 43, 85, 0.35);
+  }
+
+  .scroll-to-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+  }
+
+  .scroll-to-top-btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 12px 30px rgba(120, 200, 0, 0.32);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .progress-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-90deg);
+    pointer-events: none;
+  }
+
+  .progress-ring__bar {
+    stroke-dasharray: 125.6;
+    stroke-dashoffset: 125.6;
+    transition: stroke-dashoffset 0.1s linear;
+  }
+
+  .arrow-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+  }
+
+  .scroll-to-top-btn:hover .arrow-icon {
+    transform: translateY(-2px);
+  }
+</style>
+
+<script>
+  const scrollToTopBtn = document.getElementById('scroll-to-top');
+  const progressBar = document.getElementById('scroll-progress-bar') as SVGCircleElement | null;
+  const circumference = 2 * Math.PI * 20; // 125.66
+
+  if (progressBar) {
+    progressBar.style.strokeDasharray = `${circumference} ${circumference}`;
+    progressBar.style.strokeDashoffset = `${circumference}`;
+  }
+
+  function updateScrollProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = scrollTop / docHeight;
+
+    if (progressBar) {
+      const offset = circumference - (scrollPercent * circumference);
+      progressBar.style.strokeDashoffset = `${offset}`;
+    }
+
+    if (scrollToTopBtn) {
+      if (scrollTop > 300) {
+        scrollToTopBtn.classList.add('show');
+      } else {
+        scrollToTopBtn.classList.remove('show');
+      }
+    }
+  }
+
+  window.addEventListener('scroll', updateScrollProgress, { passive: true });
+
+  if (scrollToTopBtn) {
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+</script>
