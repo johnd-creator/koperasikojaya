@@ -1,0 +1,117 @@
+---
+const corePillars = [
+  {
+    number: "01",
+    title: "Kemandirian & Kesejahteraan Anggota",
+    description: "KOJAYA didirikan dengan semangat utama meningkatkan derajat ekonomi dan kesejahteraan hidup seluruh anggota beserta keluarganya secara berkelanjutan.",
+    delay: "100"
+  },
+  {
+    number: "02",
+    title: "Prinsip Gotong Royong & Transparansi",
+    description: "Dikelola atas dasar asas kekeluargaan, keterbukaan tata kelola (good cooperative governance), dan kesetaraan hak bagi setiap anggota koperasi.",
+    delay: "200"
+  },
+  {
+    number: "03",
+    title: "Kontribusi & Keberlanjutan",
+    description: "KOJAYA tumbuh dengan semangat memberikan manfaat yang luas, melalui pengembangan usaha dan kontribusi nyata dalam mendukung operasional pembangkit dan lingkungan industri lainnya.",
+    delay: "300"
+  }
+];
+---
+
+<section class="coop-core-section" id="koperasi">
+  <div class="container coop-core-container">
+    <div class="coop-core-header text-center" data-animate="fade-up">
+      <span class="section-tag">Jati Diri & Fondasi Utama</span>
+      <h2 class="section-title">
+        Mengapa <span class="highlight">KOJAYA</span> Didirikan?
+      </h2>
+      <p class="section-subtitle">
+        KOJAYA hadir untuk membangun ekosistem usaha bersama yang profesional dan berkelanjutan, menciptakan manfaat ekonomi bagi anggota, serta menjadi mitra terpercaya dalam mendukung kebutuhan operasional pembangkit listrik dan industri.
+      </p>
+    </div>
+
+    <div class="pillars-grid">
+      {corePillars.map((item) => (
+        <div class="pillar-card" data-animate="fade-up" data-delay={item.delay}>
+          <div class="pillar-num">{item.number}</div>
+          <h3 class="pillar-title">{item.title}</h3>
+          <p class="pillar-desc">{item.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .coop-core-section {
+    padding: 5.5rem 0;
+    background: #F7FAFC;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .text-center {
+    text-align: center;
+    margin-bottom: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .highlight {
+    color: var(--primary);
+  }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .pillar-card {
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-light);
+    border-radius: 20px;
+    padding: 2.25rem 2rem;
+    position: relative;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .pillar-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-accent);
+  }
+
+  .pillar-num {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    opacity: 0.25;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .pillar-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.75rem;
+    line-height: 1.35;
+  }
+
+  .pillar-desc {
+    font-size: 0.925rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 1024px) {
+    .pillars-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

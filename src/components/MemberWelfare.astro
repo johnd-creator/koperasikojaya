@@ -1,0 +1,253 @@
+---
+const welfareBenefits = [
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`,
+    title: "Pembagian SHU Transparan & Adil",
+    description: "Sisa Hasil Usaha (SHU) dibagikan secara berkala dan akuntabel sesuai besaran partisipasi transaksi serta simpanan setiap anggota.",
+    delay: "100"
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>`,
+    title: "Layanan Simpan Pinjam & Finansial",
+    description: "Akses fasilitas bantuan dana darurat, pinjaman usaha, dan simpanan anggota dengan bunga yang sangat kompetitif dan proses ramah anggota.",
+    delay: "200"
+  },
+  {
+  icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/></svg>`,
+  title: "Manfaat & Fasilitas Keanggotaan",
+  description: "Beragam manfaat, program, dan fasilitas khusus yang dikembangkan untuk memberikan nilai lebih bagi anggota dan keluarganya.",
+  delay: "300"
+  },
+  {
+  icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 16 4-4 3 3 5-6"/></svg>`,
+  title: "Partisipasi & Pengembangan Usaha",
+  description: "Anggota memiliki kesempatan untuk berpartisipasi dalam pengembangan koperasi serta memperoleh manfaat dari pertumbuhan usaha bersama.",
+  delay: "400"
+}
+];
+---
+
+<section class="welfare-section" id="keanggotaan">
+  <div class="container welfare-container">
+    <!-- Left Column: Content & Benefits Grid -->
+    <div class="welfare-content" data-animate="fade-up">
+      <span class="section-tag">Keanggotaan & Kesejahteraan</span>
+      <h2 class="section-title">
+        Tumbuh Bersama <span class="highlight">Anggota Sejahtera</span>
+      </h2>
+      <p class="section-subtitle">
+        KOJAYA menempatkan kesejahteraan anggota sebagai prioritas utama melalui pengelolaan usaha yang sehat, layanan yang bermanfaat, serta pembagian hasil yang transparan dan berkelanjutan.
+      </p>
+
+      <div class="benefits-grid">
+        {welfareBenefits.map((item) => (
+          <div class="benefit-card" data-animate="fade-up" data-delay={item.delay}>
+            <div class="benefit-icon" set:html={item.icon} />
+            <div class="benefit-info">
+              <h3 class="benefit-title">{item.title}</h3>
+              <p class="benefit-desc">{item.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="welfare-cta-box" data-animate="fade-up" data-delay="500">
+        <div class="cta-text-wrap">
+          <h4>Tertarik Menjadi Bagian dari Koperasi KOJAYA?</h4>
+          <p>Dapatkan manfaat keanggotaan penuh dan jaminan kesejahteraan kerja.</p>
+        </div>
+        <a href="#kontak" class="btn-primary">
+          <span>Daftar Keanggotaan</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Column: Member Photo & Stats Card -->
+    <div class="welfare-media" data-animate="scale-up" data-delay="200">
+      <div class="photo-frame">
+        <img src="/images/asset4.png" alt="Anggota Koperasi KOJAYA" class="members-photo" />
+      </div>
+
+      <div class="welfare-stat-badge animate-float">
+        <div class="stat-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="stat-info">
+          <span class="stat-number">350+</span>
+          <span class="stat-label">Anggota Tumbuh Bersama</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .welfare-section {
+    padding: 6rem 0;
+    background-color: #FFFFFF;
+    position: relative;
+  }
+
+  .welfare-container {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .highlight {
+    color: var(--primary);
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .benefit-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background-color: var(--bg-subtle);
+    border: 1px solid var(--border-light);
+    padding: 1.25rem;
+    border-radius: 16px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .benefit-card:hover {
+    border-color: var(--primary-accent);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    background-color: #FFFFFF;
+  }
+
+  .benefit-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background-color: var(--pill-green-bg);
+    color: var(--primary-dark);
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+
+  .benefit-title {
+    font-size: 0.975rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.25rem;
+  }
+
+  .benefit-desc {
+    font-size: 0.825rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .welfare-cta-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    background: var(--dark-banner);
+    color: #FFFFFF;
+    padding: 1.5rem 1.75rem;
+    border-radius: 18px;
+    box-shadow: var(--shadow-md);
+  }
+
+  .cta-text-wrap h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+
+  .cta-text-wrap p {
+    font-size: 0.825rem;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  /* Right Media */
+  .welfare-media {
+    position: relative;
+  }
+
+  .photo-frame {
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--border-light);
+  }
+
+  .members-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .welfare-stat-badge {
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-light);
+    padding: 1rem 1.25rem;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  .stat-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background-color: var(--primary-dark);
+    border-radius: 12px;
+  }
+
+  .stat-number {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-main);
+    line-height: 1.1;
+  }
+
+  .stat-label {
+    font-size: 0.775rem;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  @media (max-width: 1024px) {
+    .welfare-container {
+      grid-template-columns: 1fr;
+    }
+
+    .benefits-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .welfare-cta-box {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .welfare-stat-badge {
+      position: static;
+      margin-top: 1.5rem;
+    }
+  }
+</style>

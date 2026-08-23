@@ -1,5 +1,5 @@
-type Runtime = import("@astrojs/cloudflare").Runtime<Env>;
+/// <reference types="astro/client" />
 
-declare namespace App {
-  interface Locals extends Runtime {}
-}
+declare module '@phosphor-icons/web/regular';
+declare module '@phosphor-icons/web/bold';
+declare module '@phosphor-icons/web/fill';

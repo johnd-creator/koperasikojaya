@@ -1,0 +1,1254 @@
+---
+import '@phosphor-icons/web/regular';
+import '@phosphor-icons/web/bold';
+
+const nav = [
+  { label: 'Beranda', href: '#beranda' },
+  { label: 'Koperasi', href: '#koperasi' },
+  { label: 'Ekosistem', href: '#ekosistem' },
+  { label: 'PT KBU', href: '#pt-kbu' },
+  { label: 'Layanan', href: '#layanan' }
+];
+
+const marqueeItems = [
+  'Dukungan Operasional',
+  'Manajemen TAD',
+  'HR & Payroll',
+  'Pengadaan & Support',
+  'Jasa Profesional',
+  'Layanan Terintegrasi'
+];
+
+// Centralized business config - single source of truth for business contact data & routes
+// NOTE: Contact numbers, email, and portal URL require business confirmation before production release.
+const MEMBER_PORTAL_URL = '/portal'; // Requires business confirmation if external portal domain exists
+const CONTACT_WHATSAPP_URL = 'https://wa.me/6281234567890'; // Placeholder number - requires business confirmation
+const CONTACT_PHONE_TEL = 'tel:+6281234567890'; // Placeholder number - requires business confirmation
+const CONTACT_PHONE_DISPLAY = '+62 812 3456 7890';
+const CONTACT_EMAIL = 'info@kojaya.co.id'; // Requires business confirmation
+const CONTACT_LOCATION = 'Jakarta, Indonesia';
+
+const footerLegal = [
+  { label: 'Kebijakan Privasi', href: '#', pending: true },
+  { label: 'Ketentuan Penggunaan', href: '#', pending: true }
+];
+
+const coopPillars = [
+  {
+    num: '01',
+    title: 'KEANGGOTAAN',
+    desc: 'Anggota menjadi bagian utama dalam pertumbuhan dan ekosistem koperasi.'
+  },
+  {
+    num: '02',
+    title: 'TATA KELOLA',
+    desc: 'Kegiatan koperasi dikelola secara tertib, transparan, dan profesional.'
+  },
+  {
+    num: '03',
+    title: 'PENGEMBANGAN USAHA',
+    desc: 'Koperasi mengembangkan kegiatan dan badan usaha untuk menciptakan nilai ekonomi yang berkelanjutan.'
+  }
+];
+
+const benefits = [
+  {
+    quote: 'Sisa Hasil Usaha (SHU) dibagikan secara berkala dan akuntabel sesuai besaran partisipasi transaksi serta simpanan setiap anggota.',
+    name: 'Pembagian SHU Transparan & Adil',
+    role: 'Keanggotaan & kesejahteraan'
+  },
+  {
+    quote: 'Akses fasilitas bantuan dana darurat, pinjaman usaha, dan simpanan anggota dengan bunga yang sangat kompetitif dan proses ramah anggota.',
+    name: 'Layanan Simpan Pinjam & Finansial',
+    role: 'Manfaat untuk anggota'
+  },
+  {
+    quote: 'Anggota memiliki kesempatan untuk berpartisipasi dalam pengembangan koperasi serta memperoleh manfaat dari pertumbuhan usaha bersama.',
+    name: 'Partisipasi & Pengembangan Usaha',
+    role: 'Tumbuh bersama KOJAYA'
+  }
+];
+
+const services = [
+  {
+    title: 'Dukungan Operasional',
+    description: 'PT KBU mendukung kebutuhan operasional mitra melalui layanan yang terencana dan terukur.',
+    image: '/images/asset6.png',
+    icon: 'ph-factory'
+  },
+  {
+    title: 'Manajemen TAD Profesional',
+    description: 'Pengelolaan tenaga alih daya dengan proses administrasi dan operasional yang tertata.',
+    image: '/images/asset5.png',
+    icon: 'ph-users-three'
+  },
+  {
+    title: 'HR & Payroll',
+    description: 'Administrasi SDM, penggajian, dan dokumentasi kerja yang lebih terstruktur.',
+    image: '/images/asset4.png',
+    icon: 'ph-receipt'
+  },
+  {
+    title: 'Jasa Profesional',
+    description: 'Penyediaan tenaga dan layanan profesional sesuai kebutuhan mitra.',
+    image: '/images/asset1.png',
+    icon: 'ph-briefcase'
+  },
+  {
+    title: 'Pengadaan & Support',
+    description: 'Mendukung kebutuhan barang dan layanan penunjang operasional.',
+    image: '/images/asset2.png',
+    icon: 'ph-package'
+  },
+  {
+    title: 'Layanan Terintegrasi',
+    description: 'Solusi terintegrasi untuk mendukung proses, administrasi, dan koordinasi layanan.',
+    image: '/images/asset3.png',
+    icon: 'ph-tree-structure'
+  }
+];
+
+const processSteps = [
+  {
+    title: 'Identifikasi Kebutuhan',
+    description: 'Kami memahami kebutuhan operasional dan kondisi mitra secara menyeluruh.',
+    icon: 'ph-magnifying-glass'
+  },
+  {
+    title: 'Perencanaan & Penugasan',
+    description: 'Menyusun rencana kerja dan menugaskan SDM sesuai kompetensi yang dibutuhkan.',
+    icon: 'ph-clipboard-text'
+  },
+  {
+    title: 'Eksekusi & Monitoring',
+    description: 'Proses berjalan dengan pengawasan berkala dan pelaporan terukur.',
+    icon: 'ph-pulse'
+  },
+  {
+    title: 'Evaluasi & Peningkatan',
+    description: 'Kami mengevaluasi hasil dan terus melakukan perbaikan untuk hasil yang lebih baik.',
+    icon: 'ph-trend-up'
+  }
+];
+
+const reasons = [
+  { strong: 'Berorientasi pada kebutuhan operasional', small: 'Setiap layanan dirancang untuk mendukung kelancaran kegiatan mitra.' },
+  { strong: 'Pendekatan profesional dan adaptif', small: 'Kami menyesuaikan solusi sesuai kebutuhan dan dinamika operasional mitra.' },
+  { strong: 'Pengelolaan SDM dan administrasi lebih rapi', small: 'Proses tertata, terukur, dan mudah dipantau.' },
+  { strong: 'Mitra yang siap tumbuh bersama', small: 'Kami membangun hubungan kerja jangka panjang yang berkelanjutan.' }
+];
+---
+
+<div class="shell">
+  <a class="skip-link" href="#konten">Lewati ke konten utama</a>
+  <span class="sentinel" data-sentinel-top aria-hidden="true"></span>
+
+  {/* ───────────────── 01. NAVBAR ───────────────── */}
+  <header class="nav" data-header>
+    <div class="nav-inner">
+      <a class="brand" href="#beranda" aria-label="KOJAYA, kembali ke beranda">
+        <img class="brand-logo" src="/logo1.png" alt="KOJAYA" />
+      </a>
+
+      <nav class="nav-links" aria-label="Navigasi utama">
+        {nav.map((item, index) => (
+          <a href={item.href} class:list={[{ active: index === 0 }]}>{item.label}</a>
+        ))}
+      </nav>
+
+      <div class="nav-actions">
+        <a class="nav-portal" href={MEMBER_PORTAL_URL}>
+          <i class="ph ph-user-circle" aria-hidden="true"></i>
+          <span>Portal Anggota</span>
+        </a>
+        <a class="nav-cta" href="#kontak">
+          <span>Konsultasi</span>
+          <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <details class="nav-mobile">
+        <summary aria-label="Buka menu navigasi">
+          <span></span><span></span>
+        </summary>
+        <nav aria-label="Navigasi mobile">
+          <a href="#beranda">Beranda</a>
+          <div class="mobile-group-label">Koperasi KOJAYA</div>
+          <a href="#koperasi">Tentang Koperasi</a>
+          <a href="#keanggotaan">Manfaat Anggota</a>
+          <a href="#ekosistem">Ekosistem Usaha</a>
+          <div class="mobile-group-label">PT Kojaya Berkah Usaha</div>
+          <a href="#pt-kbu">Tentang PT KBU</a>
+          <a href="#layanan">Layanan Bisnis</a>
+          <a href="#solusi">Proses Kerja</a>
+          <a href="#tentang">Mengapa PT KBU</a>
+          <div class="mobile-divider"></div>
+          <a class="mobile-portal" href={MEMBER_PORTAL_URL}>
+            <i class="ph ph-user-circle" aria-hidden="true"></i>
+            <span>Portal Anggota</span>
+          </a>
+          <a class="mobile-cta" href="#kontak">Konsultasi</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <main id="konten">
+    {/* ─────────────────────────────────────────────────────────────
+        CHAPTER 1: KOPERASI KOJAYA
+       ───────────────────────────────────────────────────────────── */}
+
+    {/* ───────────────── 02. HERO — ONLY KOPERASI KOJAYA ───────────────── */}
+    <section id="beranda" class="hero" aria-labelledby="hero-title">
+      <div class="hero-orb hero-orb-a" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-b" aria-hidden="true"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow hero-enter" style="--ei:1"><span class="eyebrow-line"></span> Koperasi KOJAYA <span class="eyebrow-tag">Usaha Bersama</span></p>
+          <h1 id="hero-title" class="hero-enter" style="--ei:2">Tumbuh Bersama melalui <em>Gotong Royong</em> &amp; Musyawarah</h1>
+          <p class="hero-sub hero-enter" style="--ei:3">Koperasi KOJAYA membangun ekosistem usaha bersama yang berorientasi pada kesejahteraan anggota melalui tata kelola profesional dan pengembangan usaha yang berkelanjutan.</p>
+          <div class="hero-actions hero-enter" style="--ei:4">
+            <a class="btn btn-primary" href="#koperasi">Kenali KOJAYA <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="#ekosistem">Lihat Ekosistem Usaha <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <div class="hero-media hero-enter" style="--ei:5">
+          <div class="hero-frame">
+            <img src="/images/main-hero.png" alt="Ilustrasi keanggotaan dan operasional Koperasi KOJAYA" />
+          </div>
+          <div class="media-glow" aria-hidden="true"></div>
+
+          <figure class="chip chip-top">
+            <span class="chip-ico"><i class="ph-bold ph-shield-check" aria-hidden="true"></i></span>
+            <span><strong>Pengelolaan Profesional</strong><small>Proses kerja rapi &amp; akuntabel</small></span>
+          </figure>
+
+          <figure class="chip chip-bottom">
+            <span class="chip-status" aria-hidden="true"></span>
+            <span><strong>Kesejahteraan Anggota</strong><small>Partisipasi &amp; Transparansi</small></span>
+          </figure>
+
+          <p class="hero-note"><span class="live-dot" aria-hidden="true"></span> Dikelola secara terbuka dan profesional</p>
+        </div>
+      </div>
+    </section>
+
+    {/* ───────────────── 03. TENTANG KOPERASI KOJAYA (EDITORIAL LAYOUT) ───────────────── */}
+    <section id="koperasi" class="coop-about sec" aria-labelledby="coop-about-title">
+      <div class="container">
+        <header class="sec-head" data-reveal>
+          <p class="eyebrow"><span class="eyebrow-line"></span> TENTANG KOPERASI KOJAYA</p>
+          <h2 id="coop-about-title">Wadah Usaha Bersama untuk <em>Tumbuh dan Sejahtera</em></h2>
+          <p class="sec-lead">Koperasi KOJAYA hadir sebagai wadah bagi anggota untuk tumbuh bersama melalui partisipasi, tata kelola yang profesional, serta pengembangan usaha yang berkelanjutan.</p>
+        </header>
+
+        <div class="coop-pillars-grid" data-reveal>
+          {coopPillars.map((pillar) => (
+            <div class="coop-pillar-item">
+              <div class="pillar-top">
+                <span class="pillar-num">{pillar.num}</span>
+                <h3 class="pillar-badge">{pillar.title}</h3>
+              </div>
+              <p class="pillar-desc">{pillar.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ───────────────── 04. KEANGGOTAAN & MANFAAT ANGGOTA ───────────────── */}
+    <section id="keanggotaan" class="members sec" aria-labelledby="members-title">
+      <div class="container members-grid">
+        <div class="members-aside">
+          <p class="eyebrow"><span class="eyebrow-line"></span> KOPERASI KOJAYA • MANFAAT ANGGOTA</p>
+          <h2 id="members-title">Tumbuh Bersama <em>Anggota Sejahtera</em></h2>
+          <p class="members-lead">Koperasi KOJAYA menempatkan kesejahteraan anggota sebagai salah satu tujuan utama melalui pengelolaan usaha yang sehat, manfaat keanggotaan, serta pembagian hasil yang transparan dan berkelanjutan.</p>
+
+          <div class="members-portal-wrap">
+            <a class="members-portal-link" href={MEMBER_PORTAL_URL}>
+              <i class="ph ph-user-circle" aria-hidden="true"></i>
+              <span>Masuk Portal Anggota</span>
+              <i class="ph ph-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <div class="members-ctrl">
+            <button type="button" class="ctrl-btn" data-prev aria-label="Manfaat sebelumnya"><i class="ph-bold ph-arrow-left" aria-hidden="true"></i></button>
+            <button type="button" class="ctrl-btn" data-next aria-label="Manfaat berikutnya"><i class="ph-bold ph-arrow-right" aria-hidden="true"></i></button>
+            <span class="ctrl-count"><b data-slide-count>01</b> / 03</span>
+          </div>
+        </div>
+
+        <div class="members-stage" data-reveal>
+          {benefits.map((benefit, index) => (
+            <article class:list={["slide", { "is-active": index === 0 }]} data-slide={index} aria-hidden={index !== 0}>
+              <p class="slide-eyebrow">Manfaat Anggota</p>
+              <span class="slide-quote"><i class="ph-fill ph-quotes" aria-hidden="true"></i></span>
+              <blockquote>{benefit.quote}</blockquote>
+              <div class="slide-foot">
+                <strong>{benefit.name}</strong>
+                <small>{benefit.role}</small>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ─────────────────────────────────────────────────────────────
+        TRANSITION: BRIDGE TO BUSINESS CHAPTER
+       ───────────────────────────────────────────────────────────── */}
+
+    {/* ───────────────── 05. TRANSITION: PENGEMBANGAN EKOSISTEM USAHA ───────────────── */}
+    <section id="ekosistem" class="transition-sec sec" aria-label="Pengembangan Ekosistem Usaha KOJAYA">
+      <div class="container transition-inner">
+        <header class="transition-head" data-reveal>
+          <p class="kicker"><i class="ph ph-git-fork" aria-hidden="true"></i> PENGEMBANGAN EKOSISTEM USAHA</p>
+          <h2 class="transition-title">
+            Koperasi KOJAYA mengembangkan badan usaha untuk menciptakan nilai ekonomi yang <em>berkelanjutan</em> dan memperluas manfaat bagi anggota.
+          </h2>
+          <p class="transition-sub">
+            PT Kojaya Berkah Usaha (KBU) merupakan salah satu anak usaha Koperasi KOJAYA yang menjalankan layanan bisnis dan operasional secara profesional.
+          </p>
+        </header>
+
+        <div class="transition-relationship" data-reveal>
+          <div class="rel-entity rel-parent">
+            <span class="rel-label">Wadah Utama &amp; Induk Koperasi</span>
+            <h3 class="rel-name">KOPERASI KOJAYA</h3>
+            <p class="rel-desc">Ekosistem Koperasi &amp; Kesejahteraan Anggota</p>
+          </div>
+
+          <div class="rel-connector" aria-hidden="true">
+            <span class="rel-line"></span>
+            <span class="rel-text">ANAK USAHA</span>
+            <span class="rel-line"></span>
+          </div>
+
+          <div class="rel-entity rel-child">
+            <span class="rel-label rel-label-kbu">Layanan Bisnis &amp; Operasional</span>
+            <h3 class="rel-name">PT KOJAYA BERKAH USAHA</h3>
+            <p class="rel-desc">Operasional Profesional &amp; Commercial</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <span class="sentinel" data-sentinel-mid aria-hidden="true"></span>
+
+    {/* ─────────────────────────────────────────────────────────────
+        CHAPTER 2: PT KOJAYA BERKAH USAHA (PT KBU)
+       ───────────────────────────────────────────────────────────── */}
+
+    {/* ───────────────── 06. INTRODUCTION: PT KOJAYA BERKAH USAHA ───────────────── */}
+    <section id="pt-kbu" class="kbu-intro" aria-labelledby="kbu-intro-title">
+      <div class="container">
+        <header class="sec-head kbu-head" data-reveal>
+          <p class="eyebrow"><span class="eyebrow-line"></span> ANAK USAHA KOJAYA <span class="eyebrow-tag">Layanan Bisnis &amp; Operasional</span></p>
+          <h2 id="kbu-intro-title">PT Kojaya Berkah Usaha</h2>
+          <p class="sec-lead">PT Kojaya Berkah Usaha (KBU) merupakan salah satu anak usaha Koperasi KOJAYA yang menjalankan kegiatan bisnis dan layanan profesional untuk mendukung kebutuhan operasional mitra.</p>
+        </header>
+      </div>
+    </section>
+
+    {/* ───────────────── 07. TICKER: SERVICES MARQUEE (SAFE TWO-ZONE) ───────────────── */}
+    <section class="marquee-bar" aria-label="Layanan bisnis PT Kojaya Berkah Usaha">
+      <div class="marquee-static">
+        <span class="static-label">PT KBU</span>
+        <span class="static-dot" aria-hidden="true"></span>
+        <span class="static-sub">LAYANAN BISNIS</span>
+      </div>
+      <div class="marquee-viewport">
+        <div class="marquee-track">
+          {marqueeItems.map((item) => (
+            <span class="marquee-item">
+              {item}<span class="marquee-dot" aria-hidden="true"></span>
+            </span>
+          ))}
+          {marqueeItems.map((item) => (
+            <span class="marquee-item" aria-hidden="true">
+              {item}<span class="marquee-dot" aria-hidden="true"></span>
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ───────────────── 08. LAYANAN BISNIS PT KBU (BENTO GRID) ───────────────── */}
+    <section id="layanan" class="services sec" aria-labelledby="services-title">
+      <div class="container">
+        <header class="sec-head" data-reveal>
+          <p class="eyebrow"><span class="eyebrow-line"></span> LAYANAN BISNIS PT KBU</p>
+          <h2 id="services-title">Layanan Bisnis &amp; <em>Operasional</em></h2>
+          <p class="sec-lead">PT KBU menghadirkan layanan profesional yang dirancang untuk mendukung kebutuhan operasional mitra secara terencana, terstruktur, dan adaptif.</p>
+        </header>
+
+        <div class="bento">
+          {services.map((service, index) => (
+            <article class:list={["svc", { "svc-lead": index === 0, "svc-wide": index === 1, "svc-wide-x": index === 5 }]} data-reveal tabindex="0">
+              <img class="svc-img" src={service.image} alt="" loading={index > 1 ? 'lazy' : 'eager'} />
+              <div class="svc-shade"></div>
+              <div class="svc-top">
+                <span class="svc-num">{String(index + 1).padStart(2, '0')}</span>
+                <span class="svc-ico"><i class={`ph-bold ${service.icon}`} aria-hidden="true"></i></span>
+              </div>
+              <div class="svc-copy">
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+              </div>
+              <i class="ph ph-arrow-up-right svc-arrow" aria-hidden="true"></i>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ───────────────── 09. PROSES KERJA PT KBU (TIMELINE) ───────────────── */}
+    <section id="solusi" class="process sec" aria-labelledby="process-title">
+      <div class="container">
+        <header class="sec-head sec-head-process" data-reveal>
+          <p class="kicker"><i class="ph ph-path" aria-hidden="true"></i> STANDAR LAYANAN PT KBU</p>
+          <h2 id="process-title">Proses Kerja yang <em>Terstruktur</em></h2>
+          <p class="sec-lead">Setiap kebutuhan mitra ditangani melalui proses yang terencana, terukur, dan dapat dipantau untuk memastikan layanan berjalan efektif dan sesuai kebutuhan operasional.</p>
+        </header>
+
+        <ol class="timeline">
+          <span class="timeline-base" aria-hidden="true"></span>
+          <span class="timeline-progress" aria-hidden="true"></span>
+          {processSteps.map((step, index) => (
+            <li class="t-step" style={`--d:${(index * 0.15).toFixed(2)}s`}>
+              <div class="t-marker">
+                <span class="t-ico"><i class={`ph-bold ${step.icon}`} aria-hidden="true"></i></span>
+                <span class="t-num">{String(index + 1).padStart(2, '0')}</span>
+              </div>
+              <div class="t-body">
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    {/* ───────────────── 10. MENGAPA MEMILIH PT KBU ───────────────── */}
+    <section id="tentang" class="proof sec" aria-labelledby="proof-title">
+      <div class="container proof-grid">
+        <div class="proof-media" data-reveal>
+          <img src="/images/asset3.png" alt="Tim PT KBU berdiskusi profesional tentang operasional mitra" />
+          <span class="proof-caption">Dibangun untuk kerja nyata</span>
+        </div>
+        <div class="proof-copy">
+          <p class="kicker"><i class="ph ph-seal-check" aria-hidden="true"></i> MITRA LAYANAN PROFESIONAL</p>
+          <h2 id="proof-title">Mengapa Memilih <em>PT KBU</em>?</h2>
+          <p class="proof-lead">Sebagai salah satu anak usaha Koperasi KOJAYA, PT KBU menjalankan layanan bisnis dengan pendekatan profesional, terstruktur, dan adaptif untuk mendukung kebutuhan operasional mitra.</p>
+
+          <ol class="reasons">
+            {reasons.map((reason, index) => (
+              <li data-reveal>
+                <span class="r-num">{String(index + 1).padStart(2, '0')}</span>
+                <div><strong>{reason.strong}</strong><small>{reason.small}</small></div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    {/* ───────────────── 11. FINAL BUSINESS CTA PT KBU (CENTERED) ───────────────── */}
+    <section id="kontak" class="cta sec" aria-labelledby="cta-title">
+      <div class="cta-glow" aria-hidden="true"></div>
+      <div class="container cta-inner">
+        <p class="cta-kicker">KOLABORASI BISNIS</p>
+        <h2 id="cta-title">Bangun Kolaborasi Bersama <em>PT KBU</em></h2>
+        <p class="cta-lead">Diskusikan kebutuhan operasional dan peluang kemitraan bersama PT Kojaya Berkah Usaha.</p>
+        <div class="cta-actions">
+          <a class="btn btn-light" href={CONTACT_WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Jadwalkan Konsultasi <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+          <a class="btn btn-ghost-light" href="#layanan">Lihat Layanan PT KBU <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  {/* ───────────────── 12. FOOTER ───────────────── */}
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand brand-footer" href="#beranda"><img class="brand-logo" src="/logo-white.png" alt="KOJAYA" /></a>
+        <p>Koperasi KOJAYA merupakan wadah usaha bersama yang mengembangkan manfaat ekonomi dan kesejahteraan anggota melalui kegiatan koperasi serta pengembangan badan usaha.</p>
+        <p class="footer-note">PT Kojaya Berkah Usaha merupakan salah satu anak usaha Koperasi KOJAYA.</p>
+      </div>
+      <div class="footer-col">
+        <p>Koperasi KOJAYA</p>
+        <a href="#koperasi">Tentang Koperasi</a>
+        <a href="#keanggotaan">Manfaat Anggota</a>
+        <a href={MEMBER_PORTAL_URL}>Portal Anggota</a>
+      </div>
+      <div class="footer-col">
+        <p>PT Kojaya Berkah Usaha</p>
+        <a href="#pt-kbu">Tentang PT KBU</a>
+        <a href="#layanan">Layanan Bisnis</a>
+        <a href="#kontak">Konsultasi</a>
+      </div>
+      <div class="footer-col">
+        <p>Kontak</p>
+        <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+        <a href={CONTACT_PHONE_TEL}>{CONTACT_PHONE_DISPLAY}</a>
+        <span>{CONTACT_LOCATION}</span>
+      </div>
+      <div class="footer-col">
+        <p>Legal</p>
+        {footerLegal.map((item) => (
+          item.pending ? (
+            <span class="footer-legal-pending" title="Dokumen legal dalam proses penyusunan">{item.label}</span>
+          ) : (
+            <a href={item.href}>{item.label}</a>
+          )
+        ))}
+      </div>
+    </div>
+    <div class="container footer-bottom"><span>&copy; 2026 Koperasi KOJAYA. All rights reserved.</span></div>
+  </footer>
+
+  <button class="to-top" type="button" data-scroll-top aria-label="Kembali ke atas"><i class="ph-bold ph-arrow-up" aria-hidden="true"></i></button>
+</div>
+
+<script>
+  const setup = () => {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const header = document.querySelector<HTMLElement>('[data-header]');
+    const toTop = document.querySelector<HTMLButtonElement>('[data-scroll-top]');
+
+    // ── Hero entrance sequence (runs once on load) ──
+    requestAnimationFrame(() => document.body.classList.add('is-loaded'));
+
+    // ── Reveal-on-view system (single IntersectionObserver for all data-reveal) ──
+    const revealItems = document.querySelectorAll<HTMLElement>('[data-reveal]');
+    if (reduce) {
+      revealItems.forEach((el) => el.classList.add('is-visible'));
+    } else {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
+      revealItems.forEach((el) => io.observe(el));
+    }
+
+    // ── Navbar scrolled state via sentinel ──
+    const topSentinel = document.querySelector('[data-sentinel-top]');
+    if (header && topSentinel) {
+      const ho = new IntersectionObserver(([entry]) => {
+        header.classList.toggle('is-scrolled', !entry.isIntersecting);
+      }, { threshold: 0, rootMargin: '-24px 0px 0px 0px' });
+      ho.observe(topSentinel);
+    }
+
+    // ── Active section indicator on nav links (Scrollspy) ──
+    const navLinks = document.querySelectorAll<HTMLElement>('.nav-links a');
+    const sections = ['beranda', 'koperasi', 'keanggotaan', 'ekosistem', 'pt-kbu', 'layanan', 'solusi', 'tentang']
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => !!el);
+
+    if (navLinks.length && sections.length) {
+      const mapSectionToNavHref = (id: string): string => {
+        if (id === 'beranda') return '#beranda';
+        if (id === 'koperasi' || id === 'keanggotaan') return '#koperasi';
+        if (id === 'ekosistem') return '#ekosistem';
+        if (id === 'pt-kbu' || id === 'solusi' || id === 'tentang') return '#pt-kbu';
+        if (id === 'layanan') return '#layanan';
+        return `#${id}`;
+      };
+
+      const so = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const targetHref = mapSectionToNavHref(entry.target.id);
+            navLinks.forEach((link) => {
+              const isActive = link.getAttribute('href') === targetHref;
+              link.classList.toggle('active', isActive);
+              if (isActive) link.setAttribute('aria-current', 'true');
+              else link.removeAttribute('aria-current');
+            });
+          }
+        });
+      }, { rootMargin: '-30% 0px -50% 0px', threshold: 0 });
+      sections.forEach((s) => so.observe(s));
+    }
+
+    // ── Close mobile nav menu on link click ──
+    const mobileNavLinks = document.querySelectorAll('.nav-mobile nav a');
+    const mobileDetails = document.querySelector<HTMLDetailsElement>('.nav-mobile');
+    mobileNavLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        if (mobileDetails) mobileDetails.open = false;
+      });
+    });
+
+    // ── Back-to-top visibility ──
+    const midSentinel = document.querySelector('[data-sentinel-mid]');
+    if (toTop && midSentinel) {
+      const bo = new IntersectionObserver(([entry]) => {
+        toTop.classList.toggle('is-visible', !entry.isIntersecting);
+      }, { threshold: 0 });
+      bo.observe(midSentinel);
+    }
+    toTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // ── Process timeline progress animation ──
+    const timeline = document.querySelector<HTMLElement>('.timeline');
+    if (timeline) {
+      if (reduce) {
+        timeline.classList.add('is-animated');
+      } else {
+        const to = new IntersectionObserver(([entry]) => {
+          if (entry.isIntersecting) {
+            timeline.classList.add('is-animated');
+            to.unobserve(timeline);
+          }
+        }, { threshold: 0.25 });
+        to.observe(timeline);
+      }
+    }
+
+    // ── Membership crossfade carousel with auto-pause ──
+    const slides = Array.from(document.querySelectorAll<HTMLElement>('[data-slide]'));
+    const counter = document.querySelector<HTMLElement>('[data-slide-count]');
+    const stage = document.querySelector<HTMLElement>('.members-stage');
+    let active = 0;
+    let carouselTimer: ReturnType<typeof setTimeout> | undefined;
+
+    const render = (next: number) => {
+      active = (next + slides.length) % slides.length;
+      slides.forEach((slide, index) => {
+        slide.classList.toggle('is-active', index === active);
+        slide.setAttribute('aria-hidden', String(index !== active));
+      });
+      if (counter) counter.textContent = String(active + 1).padStart(2, '0');
+    };
+
+    const startAuto = () => {
+      if (!reduce && slides.length > 1) {
+        carouselTimer = setTimeout(() => render(active + 1), 7000);
+      }
+    };
+
+    const resetAuto = () => {
+      if (carouselTimer) clearTimeout(carouselTimer);
+      startAuto();
+    };
+
+    const stopAuto = () => {
+      if (carouselTimer) clearTimeout(carouselTimer);
+    };
+
+    document.querySelector('[data-prev]')?.addEventListener('click', () => { render(active - 1); resetAuto(); });
+    document.querySelector('[data-next]')?.addEventListener('click', () => { render(active + 1); resetAuto(); });
+
+    // Pause carousel on hover or keyboard focus for enhanced accessibility
+    stage?.addEventListener('mouseenter', stopAuto);
+    stage?.addEventListener('mouseleave', resetAuto);
+    stage?.addEventListener('focusin', stopAuto);
+    stage?.addEventListener('focusout', resetAuto);
+
+    slides.forEach((s) => s.addEventListener('transitionend', () => {
+      if (s.classList.contains('is-active')) resetAuto();
+    }));
+
+    startAuto();
+  };
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', setup, { once: true });
+  else setup();
+</script>
+
+<style>
+  .shell { position: relative; overflow: clip; background: var(--paper); }
+  .container { width: min(100% - 3rem, var(--container)); margin-inline: auto; }
+  .sec { padding-block: var(--section-regular); }
+
+  /* Smooth scroll margin for fixed navbar anchor offset */
+  section[id] {
+    scroll-margin-top: 5.5rem;
+  }
+
+  .skip-link {
+    position: fixed; z-index: 200; top: 1rem; left: 1rem;
+    padding: .7rem 1rem; color: var(--paper); background: var(--navy);
+    border-radius: var(--radius-pill); transform: translateY(-160%); transition: transform .2s var(--ease-out);
+  }
+  .skip-link:focus { transform: translateY(0); }
+  .sentinel { position: relative; display: block; width: 100%; height: 1px; }
+
+  /* ── NAV ── */
+  .nav {
+    position: fixed; z-index: 50; top: 1rem; left: 0; width: 100%;
+    transition: transform .4s var(--ease-out);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    width: min(100% - 3rem, var(--container)); min-height: 4.5rem; margin-inline: auto;
+    padding: var(--space-1) var(--space-1) var(--space-1) var(--space-3);
+    background: rgba(255, 255, 255, .82); border: 1px solid var(--line);
+    border-radius: var(--radius-pill);
+    box-shadow: 0 .5rem 1.6rem rgba(2, 35, 74, .07);
+    backdrop-filter: blur(14px) saturate(140%); -webkit-backdrop-filter: blur(14px) saturate(140%);
+    transition: box-shadow var(--dur) ease, background var(--dur) ease, border-color var(--dur) ease;
+  }
+  .nav.is-scrolled .nav-inner {
+    background: rgba(255, 255, 255, .95); border-color: var(--line-strong);
+    box-shadow: 0 .8rem 2rem rgba(2, 35, 74, .11);
+  }
+  .brand { display: inline-flex; align-items: center; }
+  .brand-logo { width: auto; height: 2.6rem; object-fit: contain; }
+  .nav-links { display: flex; align-items: center; gap: clamp(1rem, 2vw, 1.85rem); margin-left: clamp(1.25rem, 3vw, 2.5rem); }
+  .nav-links a {
+    position: relative; padding: .6rem 0; color: var(--slate); font-size: .925rem; font-weight: 600;
+    transition: color .25s ease;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; right: 0; bottom: .3rem; left: 0; height: 2px;
+    background: var(--green); transform: scaleX(0); transform-origin: left; transition: transform .3s var(--ease-out);
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--navy); }
+  .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+
+  .nav-actions { display: flex; align-items: center; gap: .6rem; }
+  .nav-portal {
+    display: inline-flex; align-items: center; gap: .45rem; padding: .62rem 1.05rem;
+    color: var(--navy); border: 1px solid var(--line-strong); border-radius: var(--radius-pill);
+    font-size: .9rem; font-weight: 600;
+    transition: background .25s ease, border-color .25s ease, color .25s ease;
+  }
+  .nav-portal i { font-size: 1.05rem; }
+  .nav-portal:hover { background: var(--paper-soft); border-color: var(--navy); color: var(--navy-deep); }
+  .nav-cta {
+    display: inline-flex; align-items: center; gap: .5rem; padding: .8rem 1.3rem;
+    color: var(--paper); background: var(--navy); border-radius: var(--radius-pill);
+    font-size: .9rem; font-weight: 700; transition: transform .25s var(--ease-out), background .25s ease;
+  }
+  .nav-cta i { font-size: 1rem; transition: transform .3s var(--ease-out); }
+  .nav-cta:hover { background: var(--navy-deep); transform: translateY(-2px); }
+  .nav-cta:hover i { transform: translate(2px, -2px); }
+
+  .nav-mobile { display: none; position: relative; }
+  .nav-mobile summary {
+    display: grid; width: 2.5rem; height: 2.5rem; place-content: center; gap: .3rem;
+    border-radius: 50%; background: var(--navy); cursor: pointer; list-style: none;
+  }
+  .nav-mobile summary::-webkit-details-marker { display: none; }
+  .nav-mobile summary span { display: block; width: .95rem; height: 1.6px; background: var(--paper); }
+  .nav-mobile nav {
+    position: absolute; top: 3.2rem; right: 0; display: grid; gap: .15rem; min-width: 15rem;
+    max-height: 80vh; overflow-y: auto;
+    padding: .8rem; background: var(--paper-raised); border: 1px solid var(--line);
+    border-radius: var(--radius); box-shadow: var(--shadow-soft);
+  }
+  .nav-mobile nav a:not(.mobile-portal):not(.mobile-cta) { padding: .65rem .85rem; border-radius: var(--radius-sm); color: var(--ink); font-size: .875rem; font-weight: 600; }
+  .nav-mobile nav a:not(.mobile-portal):not(.mobile-cta):hover { background: var(--paper-soft); color: var(--navy); }
+  .mobile-group-label {
+    padding: .65rem .85rem .2rem; font-family: var(--font-mono); font-size: .72rem; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--green-deep);
+  }
+  .nav-mobile nav .mobile-divider { height: 1px; margin: .4rem 0; background: var(--line); }
+  .nav-mobile nav a.mobile-portal { display: flex; align-items: center; gap: .55rem; padding: .75rem .85rem; border-radius: var(--radius-sm); color: var(--navy); border: 1px solid var(--line-strong); font-size: .875rem; font-weight: 600; }
+  .nav-mobile nav a.mobile-portal i { font-size: 1.05rem; }
+  .nav-mobile nav a.mobile-cta { display: block; padding: .75rem .85rem; border-radius: var(--radius-sm); text-align: center; color: var(--paper); background: var(--navy); font-size: .875rem; font-weight: 700; }
+
+  /* ── BUTTONS ── */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
+    min-height: 3.25rem; padding: .9rem 1.55rem; border: 1px solid transparent; border-radius: var(--radius-pill);
+    font-size: .925rem; font-weight: 700; transition: transform var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out), background .3s ease, color .3s ease, border-color .3s ease;
+  }
+  .btn i { font-size: 1.1rem; line-height: 0; transition: transform .3s var(--ease-out); }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 .7rem 1.4rem rgba(2, 35, 72, .14); }
+  .btn:hover i { transform: translate(2px, -2px); }
+  .btn:active { transform: translateY(-1px) scale(.99); }
+  .btn-primary { color: var(--paper); background: var(--navy); }
+  .btn-primary:hover { background: var(--navy-deep); }
+  .btn-ghost { color: var(--navy); border-color: var(--line-strong); }
+  .btn-ghost:hover { background: var(--paper-raised); border-color: var(--navy); }
+  .btn-light { color: var(--navy-deep); background: var(--paper-raised); }
+  .btn-light:hover { background: var(--green); color: var(--paper); }
+  .btn-ghost-light { color: var(--paper); border-color: rgba(255, 255, 255, .34); }
+  .btn-ghost-light:hover { background: rgba(255, 255, 255, .12); border-color: var(--paper); }
+
+  /* ── EYEBROW / KICKER ── */
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: .65rem; margin-bottom: var(--space-3);
+    color: var(--navy); font-family: var(--font-mono); font-size: .8rem; font-weight: 500;
+    letter-spacing: .08em; text-transform: uppercase;
+  }
+  .eyebrow-line { display: inline-block; width: 2rem; height: 1px; background: currentColor; }
+  .eyebrow-tag { padding: .22rem .65rem; color: var(--navy-deep); background: var(--green-soft); border-radius: var(--radius-pill); font-family: var(--font-sans); font-size: .75rem; font-weight: 700; letter-spacing: 0; text-transform: none; }
+  .kicker {
+    display: inline-flex; align-items: center; gap: .55rem; margin-bottom: var(--space-3);
+    color: var(--navy); font-size: .925rem; font-weight: 700;
+  }
+  .kicker i { font-size: 1.1rem; color: var(--green); }
+
+  /* ── SECTION HEAD ── */
+  .sec-head { max-width: 46rem; margin-bottom: var(--space-5); }
+  .sec-head-process { margin-bottom: var(--space-4); }
+  .kbu-head { margin-bottom: 0; }
+  h2 {
+    max-width: 38rem; margin: 0; color: var(--ink);
+    font-size: clamp(1.85rem, 3.5vw, 2.85rem); font-weight: 700; letter-spacing: -.035em; line-height: 1.12;
+  }
+  em { color: var(--navy); font-style: normal; }
+  .sec-lead { max-width: 35rem; margin-top: var(--space-2); color: var(--slate); font-size: 1.025rem; line-height: 1.65; }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative; isolation: isolate;
+    min-height: clamp(560px, 72svh, 680px);
+    padding-top: clamp(6.5rem, 9vh, 7.5rem);
+    padding-bottom: var(--section-regular);
+    overflow: hidden;
+    background: radial-gradient(circle at 82% 12%, rgba(98, 156, 33, .12), transparent 44%), var(--paper);
+  }
+  .hero-grid {
+    position: relative; z-index: 2;
+    display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(2rem, 4vw, 4rem); align-items: center;
+  }
+  .hero-copy { max-width: 42rem; }
+  .hero-copy h1 {
+    margin: 0; color: var(--ink);
+    font-size: clamp(2.35rem, 4.8vw, 4rem); font-weight: 800; letter-spacing: -.04em; line-height: 1.05;
+    text-wrap: balance;
+  }
+  .hero-copy h1 em { position: relative; color: var(--navy); }
+  .hero-copy h1 em::after {
+    content: ''; position: absolute; right: .03em; bottom: -.02em; left: .03em; height: .08em;
+    border-radius: var(--radius-pill); background: var(--green); transform: rotate(-1deg);
+  }
+  .hero-sub { max-width: 35rem; margin: var(--space-3) 0 var(--space-4); color: var(--slate); font-size: 1.0625rem; line-height: 1.65; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+
+  .hero-media { position: relative; min-height: 28rem; }
+  .hero-frame {
+    position: relative; overflow: hidden; height: 28rem;
+    border: .5rem solid var(--paper-raised); border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lift);
+  }
+  .hero-frame img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease-out); }
+  .hero-media:hover .hero-frame img { transform: scale(1.025); }
+  .media-glow {
+    position: absolute; right: -.5rem; bottom: -.5rem; width: 60%; height: 60%; z-index: -1;
+    border-radius: 50%; background: radial-gradient(circle, rgba(98, 156, 33, .25), transparent 70%); filter: blur(24px);
+  }
+  .chip {
+    position: absolute; z-index: 3; display: flex; align-items: center; gap: .7rem;
+    min-width: 10rem; margin: 0; padding: .8rem .95rem;
+    background: rgba(255, 255, 255, .88); border: 1px solid var(--line);
+    border-radius: 1rem; box-shadow: 0 1rem 2rem rgba(2, 35, 74, .11); backdrop-filter: blur(14px);
+  }
+  .chip-top { top: 1.2rem; right: -1rem; }
+  .chip-bottom { bottom: 2.8rem; left: -1.2rem; }
+  .chip strong, .chip small { display: block; }
+  .chip strong { font-size: .85rem; font-weight: 700; }
+  .chip small { margin-top: .15rem; color: var(--slate); font-size: .78rem; }
+  .chip-ico { display: grid; width: 2.2rem; height: 2.2rem; place-items: center; border-radius: var(--radius-sm); color: var(--navy); background: var(--paper-soft); }
+  .chip-ico i { font-size: 1.05rem; }
+  .chip-status { width: .55rem; height: .55rem; border-radius: 50%; background: var(--green-deep); box-shadow: 0 0 0 .32rem rgba(98, 156, 33, .22); }
+  .hero-note {
+    position: absolute; bottom: .2rem; right: .2rem; display: inline-flex; align-items: center; gap: .5rem;
+    margin: 0; color: var(--slate); font-family: var(--font-mono); font-size: .8rem; font-weight: 500;
+  }
+  .live-dot { width: .5rem; height: .5rem; border-radius: 50%; background: var(--green-deep); box-shadow: 0 0 0 .3rem rgba(98, 156, 33, .18); animation: pulse 2.4s ease-in-out infinite; }
+  .hero-orb { position: absolute; z-index: 0; border-radius: 50%; filter: blur(2px); pointer-events: none; }
+  .hero-orb-a { top: -9rem; right: 6%; width: 28rem; height: 28rem; background: radial-gradient(circle, rgba(168, 210, 122, .28), transparent 66%); }
+  .hero-orb-b { bottom: -8rem; left: -9rem; width: 22rem; height: 22rem; background: radial-gradient(circle, rgba(232, 239, 246, .65), transparent 70%); }
+
+  /* ── 03. TENTANG KOPERASI KOJAYA (EDITORIAL LAYOUT) ── */
+  .coop-about { background: var(--paper-raised); border-bottom: 1px solid var(--line); padding-block: var(--section-regular); }
+  .coop-pillars-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(2rem, 4vw, 3.5rem);
+    margin-top: 0; padding-top: var(--space-4); border-top: 1px solid var(--line-strong);
+  }
+  .coop-pillar-item {
+    display: flex; flex-direction: column; gap: .75rem;
+  }
+  .pillar-top { display: flex; align-items: baseline; gap: .85rem; }
+  .pillar-num {
+    font-family: var(--font-mono); font-size: 1.5rem; font-weight: 800;
+    color: var(--green-deep); line-height: 1;
+  }
+  .pillar-badge {
+    margin: 0; font-family: var(--font-mono); font-size: .9rem; font-weight: 800;
+    letter-spacing: .08em; color: var(--navy); text-transform: uppercase;
+  }
+  .pillar-desc { margin: 0; color: var(--slate); font-size: .95rem; line-height: 1.65; }
+
+  /* ── 04. MEMBERSHIP (BENEFIT CAROUSEL) ── */
+  .members { background: var(--paper-warm); }
+  .members-grid { display: grid; grid-template-columns: minmax(16rem, .78fr) minmax(24rem, 1.2fr); gap: clamp(2.5rem, 6vw, 5.5rem); align-items: center; }
+  .members-aside h2 { max-width: 30rem; }
+  .members-lead { max-width: 28rem; margin-top: 1.2rem; color: var(--slate); font-size: 1rem; line-height: 1.7; }
+  
+  .members-portal-wrap { margin-top: 1.5rem; }
+  .members-portal-link {
+    display: inline-flex; align-items: center; gap: .55rem;
+    padding: .65rem 1.1rem; color: var(--navy); background: rgba(255, 255, 255, .8);
+    border: 1px solid var(--line-strong); border-radius: var(--radius-pill);
+    font-size: .9rem; font-weight: 600; transition: background .25s ease, border-color .25s ease, transform .25s ease;
+  }
+  .members-portal-link i { font-size: 1.1rem; }
+  .members-portal-link:hover { background: var(--paper-raised); border-color: var(--navy); transform: translateX(3px); }
+
+  .members-ctrl { display: flex; align-items: center; gap: .6rem; margin-top: 1.8rem; }
+  .ctrl-btn { display: grid; width: 2.8rem; height: 2.8rem; place-items: center; color: var(--navy); background: var(--paper-raised); border: 1px solid var(--line); border-radius: 50%; transition: background .25s ease, color .25s ease, transform .25s var(--ease-out); }
+  .ctrl-btn i { font-size: 1rem; }
+  .ctrl-btn:hover { color: var(--paper); background: var(--navy); transform: translateY(-2px); }
+  .ctrl-count { margin-left: .8rem; color: var(--slate); font-family: var(--font-mono); font-size: .85rem; }
+  .ctrl-count b { color: var(--navy); font-weight: 700; }
+  .members-stage { position: relative; min-height: 26rem; }
+  .slide {
+    position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: space-between;
+    padding: clamp(1.6rem, 4vw, 3rem); visibility: hidden; color: var(--paper); background: var(--navy);
+    border-radius: var(--radius-lg); opacity: 0;
+    transition: opacity .5s ease, visibility .5s ease;
+  }
+  .slide.is-active { visibility: visible; opacity: 1; }
+  .slide:nth-child(2) { background: var(--ink-2); }
+  .slide:nth-child(3) { background: var(--navy-mid); }
+  .slide-eyebrow { margin: 0 0 .8rem; color: var(--green); font-family: var(--font-mono); font-size: .8rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+  .slide-quote i { font-size: 1.8rem; color: var(--green); }
+  .slide blockquote { max-width: 34rem; margin: 1rem 0 0; color: var(--paper); font-size: clamp(1.3rem, 2.2vw, 1.85rem); font-weight: 600; letter-spacing: -.025em; line-height: 1.25; }
+  .slide-foot strong { display: block; font-size: .95rem; font-weight: 700; }
+  .slide-foot small { display: block; margin-top: .25rem; color: rgba(255, 255, 255, .8); font-size: .85rem; }
+
+  /* ── 05. TRANSITION SECTION (EDITORIAL RELATIONSHIP) ── */
+  .transition-sec {
+    position: relative; overflow: hidden; background: var(--paper-soft);
+    border-block: 1px solid var(--line); padding-block: var(--section-compact);
+  }
+  .transition-inner { max-width: 58rem; }
+  .transition-head { margin-bottom: var(--space-4); }
+  .transition-title {
+    max-width: 52rem; margin: .8rem 0 1.2rem; color: var(--ink);
+    font-size: clamp(1.4rem, 2.6vw, 2.25rem); font-weight: 600; letter-spacing: -.03em; line-height: 1.3;
+  }
+  .transition-title em { color: var(--navy); font-weight: 800; }
+  .transition-sub { max-width: 44rem; margin: 0; color: var(--slate); font-size: 1.05rem; line-height: 1.65; }
+
+  .transition-relationship {
+    display: grid; grid-template-columns: 1fr auto 1fr; gap: clamp(1.5rem, 3vw, 2.5rem); align-items: center;
+    padding: clamp(1.8rem, 3vw, 2.4rem) clamp(2rem, 4vw, 3rem);
+    background: var(--paper); border: 1px solid var(--line-strong); border-radius: var(--radius-lg);
+  }
+  .rel-entity { display: flex; flex-direction: column; gap: .35rem; }
+  .rel-parent { border-left: 3px solid var(--green); padding-left: 1.25rem; }
+  .rel-child { border-left: 3px solid var(--navy); padding-left: 1.25rem; }
+  .rel-label {
+    font-family: var(--font-mono); font-size: .78rem; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--green-deep);
+  }
+  .rel-label-kbu { color: var(--navy); }
+  .rel-name { margin: 0; font-size: 1.15rem; font-weight: 800; letter-spacing: -.02em; color: var(--ink); }
+  .rel-desc { margin: 0; font-size: .925rem; color: var(--slate); line-height: 1.5; }
+  .rel-connector { display: flex; flex-direction: column; align-items: center; gap: .4rem; min-width: 6.5rem; }
+  .rel-line { width: 100%; height: 1px; background: var(--line-strong); }
+  .rel-text {
+    font-family: var(--font-mono); font-size: .75rem; font-weight: 700;
+    letter-spacing: .1em; text-transform: uppercase; color: var(--slate-soft); white-space: nowrap;
+  }
+
+  /* ── 06. PT KBU CHAPTER INTRO ── */
+  .kbu-intro {
+    background: var(--paper);
+    padding-top: var(--section-regular);
+    padding-bottom: var(--space-4);
+  }
+
+  /* ── 07. MARQUEE TICKER (SAFE TWO-ZONE FLEX LAYOUT) ── */
+  .marquee-bar {
+    display: flex; align-items: center; overflow: hidden; height: 3.25rem;
+    color: var(--paper); background: var(--navy); border-block: 1px solid rgba(255, 255, 255, .08);
+  }
+  .marquee-static {
+    flex-shrink: 0; display: inline-flex; align-items: center; gap: .65rem; height: 100%;
+    padding-left: clamp(1rem, 3vw, 2.5rem); padding-right: 1.25rem;
+    background: var(--navy); z-index: 2; border-right: 1px solid rgba(255, 255, 255, .16);
+    white-space: nowrap;
+  }
+  .static-label { font-family: var(--font-mono); font-size: .85rem; font-weight: 800; letter-spacing: .08em; color: var(--paper); }
+  .static-dot { width: .38rem; height: .38rem; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+  .static-sub { font-family: var(--font-mono); font-size: .78rem; font-weight: 700; letter-spacing: .08em; color: var(--green-soft); }
+  
+  .marquee-viewport {
+    flex: 1; position: relative; overflow: hidden; height: 100%; display: flex; align-items: center;
+    mask-image: linear-gradient(to right, transparent, black 1.5rem, black calc(100% - 1.5rem), transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 1.5rem, black calc(100% - 1.5rem), transparent);
+  }
+  .marquee-track {
+    display: flex; align-items: center; gap: 3.5rem; white-space: nowrap;
+    will-change: transform; animation: marquee-scroll 40s linear infinite;
+  }
+  .marquee-item { display: inline-flex; align-items: center; gap: 1.25rem; font-family: var(--font-mono); font-size: .85rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: rgba(255, 255, 255, .94); }
+  .marquee-dot { width: .38rem; height: .38rem; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+
+  @keyframes marquee-scroll {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
+  }
+
+  /* ── 08. BENTO SERVICES ── */
+  .services { padding-top: var(--section-compact); padding-bottom: var(--section-regular); }
+  .bento {
+    display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: minmax(15rem, auto);
+    grid-auto-flow: dense; gap: var(--space-2);
+  }
+  .svc {
+    position: relative; display: flex; flex-direction: column; justify-content: space-between;
+    min-width: 0; padding: var(--space-3); overflow: hidden; isolation: isolate;
+    border: 1px solid transparent; border-radius: var(--radius-lg);
+    background: var(--navy-deep); cursor: pointer;
+    transition: transform 350ms cubic-bezier(.22, 1, .36, 1), box-shadow 350ms cubic-bezier(.22, 1, .36, 1);
+  }
+  .svc:hover, .svc:focus-visible { transform: translateY(-2px); box-shadow: var(--shadow-lift); outline: none; }
+  .svc-lead { grid-column: span 2; grid-row: span 2; }
+  .svc-wide { grid-column: span 2; }
+  .svc-wide-x { grid-column: span 3; }
+  .svc-img {
+    position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    filter: saturate(.75) contrast(1.04); transform: scale(1.01);
+    transition: transform 350ms cubic-bezier(.22, 1, .36, 1), filter 350ms ease;
+  }
+  .svc:hover .svc-img, .svc:focus-visible .svc-img { filter: saturate(.9) contrast(1.04); transform: scale(1.025); }
+  .svc-shade { position: absolute; z-index: -1; inset: 0; background: linear-gradient(180deg, rgba(2, 24, 50, .32), rgba(2, 24, 50, .9) 82%); transition: background 350ms ease; }
+  .svc:hover .svc-shade { background: linear-gradient(180deg, rgba(2, 24, 50, .25), rgba(2, 24, 50, .86) 82%); }
+  .svc-top { display: flex; align-items: flex-start; justify-content: space-between; color: var(--paper); }
+  .svc-num { font-family: var(--font-mono); font-size: .8rem; font-weight: 500; letter-spacing: .06em; opacity: .85; }
+  .svc-ico { display: grid; width: 2.6rem; height: 2.6rem; place-items: center; color: var(--navy); background: rgba(255, 255, 255, .94); border-radius: var(--radius-sm); transition: transform 350ms cubic-bezier(.22, 1, .36, 1); }
+  .svc-ico i { font-size: 1.2rem; }
+  .svc:hover .svc-ico, .svc:focus-visible .svc-ico { transform: translateY(-2px); }
+  .svc-copy { padding-right: 2rem; }
+  .svc h3 { margin: 0 0 .6rem; max-width: 20rem; color: var(--paper); font-size: clamp(1.1rem, 1.3vw, 1.35rem); font-weight: 700; letter-spacing: -.025em; line-height: 1.18; }
+  .svc-lead h3 { font-size: clamp(1.4rem, 2vw, 1.95rem); }
+  .svc p { max-width: 24rem; margin: 0; color: rgba(255, 255, 255, .92); font-size: .925rem; line-height: 1.55; }
+  .svc-lead p { font-size: .975rem; max-width: 30rem; }
+  .svc-arrow { position: absolute; right: var(--space-3); bottom: var(--space-3); color: var(--green); font-size: 1.2rem; transition: transform 350ms cubic-bezier(.22, 1, .36, 1); }
+  .svc:hover .svc-arrow, .svc:focus-visible .svc-arrow { transform: translate(2px, -2px); }
+
+  /* ── 09. PROCESS (TIMELINE) ── */
+  .process { background: var(--paper-raised); border-block: 1px solid var(--line); padding-block: var(--section-regular); }
+  .timeline {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+    position: relative; margin-top: 0;
+  }
+  .timeline-base {
+    position: absolute; top: 2.5rem; left: 12.5%; right: 12.5%;
+    height: 2px; background: var(--line-strong); z-index: 0; pointer-events: none;
+  }
+  .timeline-progress {
+    position: absolute; top: 2.5rem; left: 12.5%; right: 12.5%;
+    height: 2px; background: var(--green); transform: scaleX(0); transform-origin: left;
+    z-index: 0; pointer-events: none; transition: transform 1s var(--ease-out) 0.15s;
+  }
+  .timeline.is-animated .timeline-progress { transform: scaleX(1); }
+  .t-step {
+    position: relative; z-index: 1; display: flex; flex-direction: column;
+    opacity: 0; transform: translateY(12px);
+    transition: opacity .45s var(--ease-out), transform .45s var(--ease-out);
+  }
+  .t-step:nth-child(3) { transition-delay: 0.1s; }
+  .t-step:nth-child(4) { transition-delay: 0.35s; }
+  .t-step:nth-child(5) { transition-delay: 0.65s; }
+  .t-step:nth-child(6) { transition-delay: 0.9s; }
+  .timeline.is-animated .t-step { opacity: 1; transform: translateY(0); }
+
+  .t-marker { display: flex; flex-direction: column; align-items: center; gap: .55rem; margin-bottom: 1.25rem; }
+  .t-ico {
+    display: grid; width: 5rem; height: 5rem; place-items: center;
+    color: var(--navy); background: var(--paper-raised); border: 2px solid var(--line-strong);
+    border-radius: 50%; transition: border-color .35s ease, color .35s ease, background .35s ease, transform .35s var(--ease-out);
+  }
+  .t-ico i { font-size: 1.85rem; }
+  .t-step:hover .t-ico { border-color: var(--navy); background: var(--navy); color: var(--green); transform: translateY(-2px); }
+  .t-num { font-family: var(--font-mono); font-size: .84rem; font-weight: 600; color: var(--slate-soft); letter-spacing: .06em; transition: color .4s var(--ease-out); }
+  .timeline.is-animated .t-num { color: var(--green-deep); }
+  .t-body { text-align: center; padding-inline: .25rem; }
+  .t-body h3 { margin: 0 0 .4rem; color: var(--ink); font-size: 1.125rem; font-weight: 700; letter-spacing: -.02em; line-height: 1.3; }
+  .t-body p { margin: 0; color: var(--slate); font-size: .95rem; line-height: 1.6; }
+
+  /* ── 10. PROOF (WHY CHOOSE PT KBU) ── */
+  .proof { padding-block: var(--section-regular); }
+  .proof-grid { display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1fr); gap: clamp(2.5rem, 6vw, 5.5rem); align-items: center; }
+  .proof-media { position: relative; min-height: 34rem; overflow: hidden; border-radius: var(--radius-lg) var(--radius-lg) var(--radius-lg) 8rem; background: var(--paper-soft); }
+  .proof-media img { width: 100%; height: 100%; min-height: 34rem; object-fit: cover; filter: saturate(.82) contrast(1.04); transition: transform 1.1s var(--ease-out); }
+  .proof-media:hover img { transform: scale(1.03); }
+  .proof-caption { position: absolute; bottom: 1rem; left: 1rem; padding: .65rem 1rem; color: var(--paper); background: rgba(2, 35, 72, .85); border-radius: var(--radius-pill); font-size: .8rem; font-weight: 700; backdrop-filter: blur(12px); }
+  .proof-copy .kicker { color: var(--navy); }
+  .proof-lead { max-width: 34rem; margin: var(--space-2) 0 var(--space-4); color: var(--slate); font-size: 1rem; line-height: 1.7; }
+  .reasons { display: grid; gap: 0; counter-reset: r; }
+  .reasons li { display: grid; grid-template-columns: 2.6rem 1fr; gap: 1rem; padding: 1.2rem 0; border-bottom: 1px solid var(--line); transition: padding-left .3s var(--ease-out); }
+  .reasons li:first-child { border-top: 1px solid var(--line); }
+  .reasons li:hover { padding-left: .5rem; }
+  .reasons li:hover .r-num { color: var(--green); transform: scale(1.06); }
+  .r-num { color: var(--green-deep); font-family: var(--font-mono); font-size: .875rem; font-weight: 600; padding-top: .15rem; transition: transform .3s var(--ease-out), color .3s ease; }
+  .reasons strong { display: block; color: var(--ink); font-size: 1rem; font-weight: 700; transition: transform .3s var(--ease-out); }
+  .reasons li:hover strong { transform: translateX(2px); }
+  .reasons small { display: block; margin-top: .3rem; color: var(--slate); font-size: .9375rem; line-height: 1.6; }
+
+  /* ── 11. FINAL BUSINESS CTA PT KBU (CENTERED) ── */
+  .cta {
+    position: relative; overflow: hidden; color: var(--paper); background: var(--navy);
+    padding-block: var(--section-closing);
+  }
+  .cta-glow {
+    position: absolute; top: 50%; left: 50%; width: 42rem; height: 42rem;
+    transform: translate(-50%, -50%); border-radius: 50%;
+    background: radial-gradient(circle, rgba(98, 156, 33, .22), transparent 65%); pointer-events: none;
+  }
+  .cta-inner {
+    position: relative; z-index: 1; max-width: 38rem; margin-inline: auto;
+    text-align: center; display: flex; flex-direction: column; align-items: center;
+  }
+  .cta-kicker { display: inline-block; margin-bottom: 1rem; color: var(--green); font-family: var(--font-mono); font-size: .84rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+  .cta-inner h2 { color: var(--paper); max-width: 36rem; margin-inline: auto; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.15; }
+  .cta-inner h2 em { color: var(--green); font-style: normal; white-space: nowrap; }
+  .cta-lead { max-width: 31rem; margin: var(--space-2) auto var(--space-4); color: rgba(255, 255, 255, .88); font-size: 1.05rem; line-height: 1.65; }
+  .cta-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .9rem; width: 100%; }
+
+  /* ── 12. FOOTER ── */
+  .footer { padding-top: var(--section-regular); padding-bottom: var(--space-3); color: rgba(255, 255, 255, .82); background: var(--ink); }
+  .footer-grid { display: grid; grid-template-columns: 2fr .85fr .95fr .8fr .7fr; gap: var(--space-5); padding-bottom: var(--space-5); }
+  .brand-footer { color: var(--paper); }
+  .brand-footer .brand-logo { width: 120px; height: auto; margin-bottom: var(--space-3); }
+  .footer-brand p { max-width: 26rem; font-size: .9rem; line-height: 1.65; color: rgba(255, 255, 255, .85); }
+  .footer-note { margin-top: var(--space-3); padding-top: var(--space-2); border-top: 1px solid rgba(255, 255, 255, .12); font-size: .85rem; line-height: 1.55; color: rgba(255, 255, 255, .75); }
+  .footer-col { display: grid; align-content: start; gap: .75rem; font-size: .9rem; }
+  .footer-col p { margin-bottom: .25rem; color: var(--green-soft); font-family: var(--font-mono); font-size: .8rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+  .footer-col a { color: rgba(255, 255, 255, .85); transition: color .25s ease; }
+  .footer-col a:hover { color: var(--paper); }
+  .footer-col span { color: rgba(255, 255, 255, .7); }
+  .footer-legal-pending { color: rgba(255, 255, 255, .45); font-size: .85rem; cursor: default; }
+  .footer-bottom { display: flex; justify-content: space-between; gap: var(--space-2); padding-top: var(--space-3); border-top: 1px solid rgba(255, 255, 255, .12); color: rgba(255, 255, 255, .68); font-size: .85rem; }
+
+  /* ── TO TOP ── */
+  .to-top {
+    position: fixed; z-index: 40; right: 1.4rem; bottom: 1.4rem;
+    display: grid; width: 3rem; height: 3rem; place-items: center;
+    color: var(--paper); background: var(--navy); border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 50%; box-shadow: 0 .8rem 1.7rem rgba(2, 24, 50, .28);
+    opacity: 0; pointer-events: none; transform: translateY(1rem);
+    transition: opacity .3s ease, transform .3s var(--ease-out), background .3s ease;
+  }
+  .to-top.is-visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+  .to-top:hover { background: var(--navy-deep); transform: translateY(-3px); }
+  .to-top i { font-size: 1.1rem; }
+
+  /* ── REVEAL SYSTEM ── */
+  [data-reveal] { opacity: 0; transform: translateY(16px); transition: opacity .6s var(--ease-out), transform .6s var(--ease-out); transition-delay: var(--d, 0s); }
+  [data-reveal].is-visible { opacity: 1; transform: none; }
+
+  /* ── HERO ENTRANCE SEQUENCE (ONE-TIME LOAD) ── */
+  .hero-enter {
+    opacity: 0; transform: translateY(16px);
+    transition: opacity .55s var(--ease-out), transform .55s var(--ease-out);
+    transition-delay: calc(var(--ei, 0) * 85ms + 100ms);
+  }
+  .hero-media.hero-enter { transform: translateY(16px) scale(.98); }
+  :global(.is-loaded) .hero-enter { opacity: 1; transform: none; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes pulse { 0%, 100% { box-shadow: 0 0 0 .3rem rgba(98, 156, 33, .18); } 50% { box-shadow: 0 0 0 .5rem rgba(98, 156, 33, .08); } }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .hero-grid { grid-template-columns: 1fr; gap: var(--space-5); }
+    .hero-copy { max-width: 50rem; }
+    .hero-media { min-height: 24rem; max-width: 44rem; }
+    .hero-frame { height: 24rem; }
+    .coop-pillars-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    
+    .transition-relationship { grid-template-columns: 1fr; gap: 1.25rem; padding: 1.6rem; }
+    .rel-parent, .rel-child { border-left: 3px solid var(--green); padding-left: 1rem; }
+    .rel-child { border-left-color: var(--navy); }
+    .rel-connector { flex-direction: row; min-width: auto; justify-content: center; margin-block: .25rem; }
+    .rel-line { width: 2.5rem; }
+    
+    .proof-grid, .members-grid { grid-template-columns: 1fr; gap: var(--space-5); }
+  }
+
+  @media (max-width: 860px) {
+    .nav-links, .nav-actions { display: none; }
+    .nav-mobile { display: block; }
+    .bento { grid-template-columns: repeat(2, 1fr); grid-auto-rows: minmax(13rem, auto); }
+    .svc-lead { grid-row: span 2; }
+    .svc-wide, .svc-wide-x { grid-column: span 2; }
+    
+    /* Process section mobile vertical progress line */
+    .timeline { grid-template-columns: 1fr; gap: 0; }
+    .timeline-base { top: 1.5rem; bottom: 1.5rem; left: 1.9rem; right: auto; width: 2px; height: auto; background: var(--line-strong); }
+    .timeline-progress { top: 1.5rem; bottom: 1.5rem; left: 1.9rem; right: auto; width: 2px; height: auto; background: var(--green); transform: scaleY(0); transform-origin: top; transition: transform 1.1s var(--ease-out) 0.15s; }
+    .timeline.is-animated .timeline-progress { transform: scaleY(1); }
+
+    .t-step { flex-direction: row; align-items: flex-start; gap: var(--space-3); padding-block: var(--space-2); }
+    .t-marker { flex-direction: row; align-items: center; margin-bottom: 0; flex-shrink: 0; }
+    .t-ico { width: 3.8rem; height: 3.8rem; border-color: var(--line-strong); flex-shrink: 0; }
+    .t-ico i { font-size: 1.4rem; }
+    .t-body { text-align: left; padding-inline: 0; }
+
+    .proof-media, .proof-media img { min-height: 24rem; }
+    .proof-media { border-radius: var(--radius-lg) var(--radius-lg) var(--radius-lg) var(--space-6); }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-5) var(--space-3); }
+    .footer-brand { grid-column: 1 / -1; }
+    .brand-footer .brand-logo { width: 105px; }
+  }
+
+  @media (max-width: 600px) {
+    .container { width: min(100% - 2rem, var(--container)); }
+    .nav { top: .55rem; }
+    .nav-inner { min-height: 3.8rem; padding-left: var(--space-2); }
+    .brand-logo { height: 2.1rem; }
+    .brand-footer .brand-logo { width: 98px; }
+    .hero { padding-top: 6.5rem; min-height: auto; }
+    .hero-copy h1 { font-size: clamp(1.9rem, 8vw, 2.7rem); line-height: 1.08; }
+    .hero-sub { font-size: 1rem; }
+    .hero-actions { flex-direction: column; align-items: stretch; }
+    .btn { width: 100%; }
+    .hero-media { min-height: 20rem; }
+    .hero-frame { height: 20rem; border-width: .35rem; border-radius: var(--radius-lg); }
+    .chip { min-width: 8.4rem; padding: var(--space-1); }
+    .chip-top { top: .4rem; right: -.3rem; }
+    .chip-bottom { bottom: 2rem; left: -.4rem; }
+    .hero-note { display: none; }
+    .sec { padding-block: var(--section-regular); }
+    .bento { grid-template-columns: 1fr; }
+    .svc-lead, .svc-wide, .svc-wide-x { grid-column: span 1; grid-row: span 1; }
+    .svc { min-height: 12rem; }
+    .cta-actions { flex-direction: column; align-items: stretch; }
+    .cta-actions .btn { width: 100%; }
+    .reasons li { grid-template-columns: 2.2rem 1fr; gap: var(--space-1); }
+    .members-stage { min-height: 22rem; }
+    .slide { padding: var(--space-3); border-radius: var(--radius-lg); }
+    .slide blockquote { font-size: 1.4rem; }
+    .footer-grid { grid-template-columns: 1fr; gap: var(--space-4); }
+    .footer-bottom { flex-direction: column; gap: .5rem; }
+    .to-top { right: 1rem; bottom: 1rem; }
+  }
+
+  @media (max-width: 430px) {
+    .marquee-static { padding-left: .85rem; padding-right: .85rem; gap: .35rem; }
+    .static-sub, .static-dot { display: none; }
+  }
+
+  /* ── REDUCED MOTION PREFERENCE ── */
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track { animation: none; overflow-x: auto; }
+    .live-dot { animation: none; }
+    .hero-enter { opacity: 1 !important; transform: none !important; transition: none !important; }
+    .t-step { opacity: 1 !important; transform: none !important; }
+    .timeline-progress { transform: scaleX(1) !important; transition: none !important; }
+    [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
+    *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+  }
+</style>

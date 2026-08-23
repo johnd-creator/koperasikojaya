@@ -1,0 +1,177 @@
+---
+const steps = [
+  {
+    number: "1",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>`,
+    title: "Identifikasi Kebutuhan",
+    description: "Kami memahami kebutuhan operasional dan kondisi mitra secara menyeluruh."
+  },
+  {
+    number: "2",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 12h6"/><path d="M9 16h6"/></svg>`,
+    title: "Perencanaan & Penugasan",
+    description: "Menyusun rencana kerja dan menugaskan SDM sesuai kompetensi yang dibutuhkan."
+  },
+  {
+    number: "3",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>`,
+    title: "Eksekusi & Monitoring",
+    description: "Proses berjalan dengan pengawasan berkala dan pelaporan terukur."
+  },
+  {
+    number: "4",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>`,
+    title: "Evaluasi & Peningkatan",
+    description: "Kami mengevaluasi hasil dan terus melakukan perbaikan untuk hasil yang lebih baik."
+  }
+];
+---
+
+<section class="work-process-section" id="solusi">
+  <div class="container">
+    <div class="section-header text-center">
+      <h2 class="section-title">Proses Kerja yang Lebih Terstruktur</h2>
+    </div>
+
+    <div class="process-steps-wrapper">
+      {steps.map((step, index) => (
+        <div class="step-card">
+          <div class="step-header">
+            <div class="step-badge">{step.number}</div>
+            <div class="step-icon-circle" set:html={step.icon} />
+          </div>
+          {index < steps.length - 1 && <div class="step-connector" />}
+          <div class="step-content">
+            <h3 class="step-title">{step.title}</h3>
+            <p class="step-desc">{step.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .work-process-section {
+    padding: 6rem 0;
+    background-color: var(--bg-subtle);
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .text-center {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .process-steps-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    position: relative;
+  }
+
+  .step-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  .step-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .step-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background-color: var(--primary-dark);
+    color: #FFFFFF;
+    font-size: 0.875rem;
+    font-weight: 700;
+    border-radius: 50%;
+  }
+
+  .step-icon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    background-color: #FFFFFF;
+    border: 2px solid var(--pill-green-bg);
+    box-shadow: var(--shadow-md);
+    color: var(--primary);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  .step-card:hover .step-icon-circle {
+    border-color: var(--primary);
+    transform: scale(1.05);
+    background-color: var(--pill-green-bg);
+  }
+
+  .step-connector {
+    position: absolute;
+    top: 32px;
+    left: 100px;
+    right: -40px;
+    height: 2px;
+    border-top: 2px dashed var(--border-light);
+    z-index: 1;
+  }
+
+  .step-content {
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: 1.5rem 1.25rem;
+    width: 100%;
+    min-height: 140px;
+    transition: all 0.3s ease;
+  }
+
+  .step-card:hover .step-content {
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-accent);
+  }
+
+  .step-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+  }
+
+  .step-desc {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 1024px) {
+    .process-steps-wrapper {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem 1.5rem;
+    }
+
+    .step-connector {
+      display: none;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .process-steps-wrapper {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
